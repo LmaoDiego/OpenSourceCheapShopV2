@@ -19,10 +19,9 @@ public class Vote extends AuditModel {
             strategy = GenerationType.IDENTITY
     )
     private Long id;
+
     @NotNull
-    @Size(
-            max = 100
-    )
+    @Size(max = 100)
     @NaturalId
     private String name;
 

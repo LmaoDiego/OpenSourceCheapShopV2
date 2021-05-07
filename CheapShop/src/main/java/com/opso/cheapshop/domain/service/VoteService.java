@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 public interface VoteService {
     Page<Vote> getAllVotes(Pageable pageable);
 
-    Vote getVoteById(Long tagId);
+    Vote getVoteById(Long voteId);
 
     Vote createVote(Vote vote);
 
