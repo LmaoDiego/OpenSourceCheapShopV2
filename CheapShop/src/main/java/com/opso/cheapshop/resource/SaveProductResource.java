@@ -1,40 +1,30 @@
-package com.opso.cheapshop.domain.model;
+package com.opso.cheapshop.resource;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-@Entity
-@Table(name="products")
-public class Product extends AuditModel{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class SaveProductResource {
 
     @NotNull
-    @Column(unique = true)
+    @NotBlank
+    @Size(max=75)
     private String name;
 
     @NotNull
+    @NotBlank
     private Double price;
 
     @NotNull
+    @NotBlank
+    @Size(max=300)
     private String description;
-
-    public Long getId() {
-        return id;
-    }
-
-    public Product setId(Long id) {
-        this.id = id;
-        return this;
-    }
 
     public String getName() {
         return name;
     }
 
-    public Product setName(String name) {
+    public SaveProductResource setName(String name) {
         this.name = name;
         return this;
     }
@@ -43,7 +33,7 @@ public class Product extends AuditModel{
         return price;
     }
 
-    public Product setPrice(Double price) {
+    public SaveProductResource setPrice(Double price) {
         this.price = price;
         return this;
     }
@@ -52,7 +42,7 @@ public class Product extends AuditModel{
         return description;
     }
 
-    public Product setDescription(String description) {
+    public SaveProductResource setDescription(String description) {
         this.description = description;
         return this;
     }

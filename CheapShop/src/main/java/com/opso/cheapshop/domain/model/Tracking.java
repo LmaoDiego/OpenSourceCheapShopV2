@@ -13,8 +13,9 @@ public class Tracking extends AuditModel{
     @NotNull
     private String date;
 
-    private String description;
     @NotNull
+    private String description;
+
 
     @NotNull
     private String place;

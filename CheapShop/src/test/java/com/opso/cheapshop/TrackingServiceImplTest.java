@@ -52,9 +52,9 @@ public class TrackingServiceImplTest {
                 .thenReturn(Optional.of(tracking));
 
         // Act
-        Tracking foundVote = trackingService.getTrackingById(id);
+        Tracking foundTracking = trackingService.getTrackingById(id);
 
         // Assert
-        assertThat(foundVote.getId()).isEqualTo(id);
+        assertThat(foundTracking.getId()).isEqualTo(id);
     }
 }
