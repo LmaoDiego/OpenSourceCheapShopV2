@@ -1,31 +1,30 @@
-
 package com.opso.cheapshop.resource;
-import com.opso.cheapshop.domain.model.AuditModel;
-public class TrackingResource extends AuditModel {
 
-    private long id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+public class SaveTrackingResource {
+    @NotNull
+    @NotBlank
+    @Size(max = 50)
     private String date;
 
+    @NotNull
+    @NotBlank
+    @Size(max = 250)
     private String description;
 
+    @NotNull
+    @NotBlank
     private String place;
 
-
-    public long getId() {
-        return id;
-    }
-
-    public TrackingResource setId(long id) {
-        this.id = id;
-        return this;
-    }
 
     public String getDate() {
         return date;
     }
 
-    public TrackingResource setDate(String date) {
+    public SaveTrackingResource setDate(String date) {
         this.date = date;
         return this;
     }
@@ -34,7 +33,7 @@ public class TrackingResource extends AuditModel {
         return description;
     }
 
-    public TrackingResource setDescription(String description) {
+    public SaveTrackingResource setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -43,7 +42,7 @@ public class TrackingResource extends AuditModel {
         return place;
     }
 
-    public TrackingResource setPlace(String place) {
+    public SaveTrackingResource setPlace(String place) {
         this.place = place;
         return this;
     }
