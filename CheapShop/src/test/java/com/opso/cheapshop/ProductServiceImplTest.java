@@ -41,12 +41,12 @@ public class ProductServiceImplTest {
         }
     }
     @Test
-    @DisplayName("When getProductByTitle With Valid Title Then Returns Post")
+    @DisplayName("When getProductByTitle With Valid Title/Price/Description Then Returns Post")
     public void whenGetProductByTitleWithValidTitleThenReturnsPost() {
         // Arrange
-        String name = "Great Name";
+        String name = "Mouse Razer";
         Double price = 500D;
-        String description = "Great Description";
+        String description = "30k DPI";
         Long id = 1L;
         Product product = new Product().setId(id).setName(name)
                 .setPrice(price)

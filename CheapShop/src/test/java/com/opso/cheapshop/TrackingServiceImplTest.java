@@ -40,12 +40,12 @@ public class TrackingServiceImplTest {
         }
     }
     @Test
-    @DisplayName("When getVoteByTitle With Valid Title Then Returns Post")
-    public void whenGetVoteByTitleWithValidTitleThenReturnsPost() {
+    @DisplayName("When getTrackingByDate,ByDescription,ByPlace With Valid Date/Description/Place Then Returns Post")
+    public void whenGetTrackingByDateByDescriptionByPlaceWithValidDateDescriptionPlaceThenReturnsPost() {
         // Arrange
-        String date = "Great Date";
-        String description = "Great Description";
-        String place = "Great Place";
+        String date = "15/03/1199";
+        String description = "Tha best Tracking";
+        String place = "PLACE";
         Long id = 1L;
         Tracking tracking = new Tracking().setId(id).setDate(date).setDescription(description).setPlace(place);
         when(trackingRepository.findById(id))

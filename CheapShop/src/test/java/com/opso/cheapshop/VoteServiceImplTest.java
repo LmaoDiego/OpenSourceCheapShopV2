@@ -34,7 +34,7 @@ public class VoteServiceImplTest {
     @Test
     @DisplayName("When getVoteByTitle With Valid Title Then Returns Post")
     public void whenGetVoteByTitleWithValidTitleThenReturnsPost() {
-        String title = "Great Vote";
+        String title = "Vote 1";
         Long id = 1L;
         Vote vote = (new Vote()).setId(id).setName(title);
         Mockito.when(this.voteRepository.findById(id)).thenReturn(Optional.of(vote));
