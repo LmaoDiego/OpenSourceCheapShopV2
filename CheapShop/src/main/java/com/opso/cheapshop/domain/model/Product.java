@@ -7,19 +7,27 @@ import javax.validation.constraints.NotNull;
 @Table(name="products")
 public class Product extends AuditModel{
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
-    @Column(unique = true)
-    private String name;
+    private  String name;
 
     @NotNull
     private Double price;
 
     @NotNull
     private String description;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "supplier_id", nullable = false)
+    private Supplier supplier;
+
 
     public Long getId() {
         return id;
@@ -54,6 +62,24 @@ public class Product extends AuditModel{
 
     public Product setDescription(String description) {
         this.description = description;
+        return this;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Product setCategory(Category category) {
+        this.category = category;
+        return this;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public Product setSupplier(Supplier supplier) {
+        this.supplier = supplier;
         return this;
     }
 }

@@ -1,6 +1,7 @@
 package com.opso.cheapshop.service;
 
 import com.opso.cheapshop.domain.model.Product;
+import com.opso.cheapshop.domain.repository.CategoryRepository;
 import com.opso.cheapshop.domain.repository.ProductRepository;
 import com.opso.cheapshop.domain.service.ProductService;
 import com.opso.cheapshop.exception.ResourceNotFoundException;
@@ -14,9 +15,8 @@ import org.springframework.stereotype.Service;
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
-
-    public ProductServiceImpl() {
-    }
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     public Page<Product> getAllProducts(Pageable pageable) {
         return this.productRepository.findAll(pageable);
@@ -35,6 +35,7 @@ public class ProductServiceImpl implements ProductService {
     public Product updateProduct(Long productId, Product productDetails) {
         return (Product) this.productRepository.findById(productId).map((product) -> {
             product.setName(productDetails.getName());
+            product.setDescription(productDetails.getDescription());
             return (Product)this.productRepository.save(product);
         }).orElseThrow(() -> {
             return new ResourceNotFoundException("Product", "Id", productId);

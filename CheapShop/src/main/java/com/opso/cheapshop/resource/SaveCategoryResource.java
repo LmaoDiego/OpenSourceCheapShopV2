@@ -4,36 +4,23 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class SaveProductResource {
-
+public class SaveCategoryResource {
     @NotNull
     @NotBlank
-    @Size(max=75)
+    @Size(max = 100)
     private String name;
 
     @NotNull
-    private Double price;
-
-    @NotNull
     @NotBlank
-    @Size(max=300)
+    @Size(max = 250)
     private String description;
 
     public String getName() {
         return name;
     }
 
-    public SaveProductResource setName(String name) {
+    public SaveCategoryResource setName(String name) {
         this.name = name;
-        return this;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public SaveProductResource setPrice(Double price) {
-        this.price = price;
         return this;
     }
 
@@ -41,7 +28,7 @@ public class SaveProductResource {
         return description;
     }
 
-    public SaveProductResource setDescription(String description) {
+    public SaveCategoryResource setDescription(String description) {
         this.description = description;
         return this;
     }

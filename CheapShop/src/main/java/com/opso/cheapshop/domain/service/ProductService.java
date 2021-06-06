@@ -2,7 +2,6 @@ package com.opso.cheapshop.domain.service;
 
 
 import com.opso.cheapshop.domain.model.Product;
-import com.opso.cheapshop.domain.model.Vote;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

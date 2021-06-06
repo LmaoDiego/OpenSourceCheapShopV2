@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.acme</groupId>
-    <artifactId>offirent</artifactId>
+    <artifactId>OPSO</artifactId>
     <version>1.0</version>
-    <name>offirent</name>
-    <description>Offirent Application</description>
+    <name>CheapShopV2</name>
+    <description>CheapShop Application</description>
 
     <properties>
         <java.version>15</java.version>

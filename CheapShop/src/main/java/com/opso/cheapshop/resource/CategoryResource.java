@@ -1,18 +1,15 @@
 package com.opso.cheapshop.resource;
 
-import com.opso.cheapshop.domain.model.AuditModel;
-
-public class ProductResource extends AuditModel {
+public class CategoryResource {
     private Long id;
     private String name;
-    private Double price;
     private String description;
 
     public Long getId() {
         return id;
     }
 
-    public ProductResource setId(Long id) {
+    public CategoryResource setId(Long id) {
         this.id = id;
         return this;
     }
@@ -21,17 +18,8 @@ public class ProductResource extends AuditModel {
         return name;
     }
 
-    public ProductResource setName(String name) {
+    public CategoryResource setName(String name) {
         this.name = name;
-        return this;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public ProductResource setPrice(Double price) {
-        this.price = price;
         return this;
     }
 
@@ -39,8 +27,11 @@ public class ProductResource extends AuditModel {
         return description;
     }
 
-    public ProductResource setDescription(String description) {
+    public CategoryResource setDescription(String description) {
         this.description = description;
         return this;
     }
+
+
+
 }
